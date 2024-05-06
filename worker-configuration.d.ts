@@ -3,4 +3,5 @@
 
 interface Env {
 	kv: KVNamespace;
+	API_KEY: string | undefined;
 }

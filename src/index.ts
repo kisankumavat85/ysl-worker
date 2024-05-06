@@ -1,11 +1,13 @@
 import { AutoRouter } from 'itty-router';
+
 import { addLink, getLink } from './controllers/link';
+import { auth } from './controllers/auth';
 
 const router = AutoRouter({
-	base: '/api',
+  base: '/api',
 });
 
-router.post('/link/add', addLink);
-router.get('/link/:slug', getLink);
+router.post('/link/add', auth, addLink);
+router.get('/link/:slug', auth, getLink);
 
 export default { ...router };
