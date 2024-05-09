@@ -6,9 +6,6 @@ export const auth: RequestHandler = async (request, { API_KEY }) => {
     const basicAuth = request.headers.get('Authorization')?.split('Basic ')[1];
     const apiKey = xApiKey ?? basicAuth;
 
-    console.log('xApiKey', xApiKey);
-    console.log('apiKey', apiKey);
-
     if (!apiKey || apiKey !== API_KEY) {
       return error(401, {
         success: false,
